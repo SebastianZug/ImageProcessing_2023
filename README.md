@@ -126,13 +126,46 @@ https://www.kaggle.com/sebastianzug/part-1-notebooks
 | Datenvisualisierung                | Nicht ideal für Datenvisualisierung                               | Ideal für Datenexploration und -visualisierung                       |
 | Automatisierung und Bereitstellung | Eher geeignet für Automatisierung, Integration und Bereitstellung | Weniger geeignet für Automatisierung, Integration und Bereitstellung |
 
-## Session 2 - Introduction to image processing based on opencv 
+## Session 2 - Basics  
 
 > What does it mean "image processing"?
 
 _In computer science and electrical engineering, image processing is the processing of signals that represent images, for example photographs or frames from videos. The result of image processing can in turn be an image or a set of features of the input image._ (Wikipedia)
 
-The whole story is "slightly" more complex :-)
+Was ist eigentlich ein Bild aus Sicht des Computers?
+
+```python ColoredImage.py
+import numpy as np
+import cv2
+from matplotlib import pyplot as plt
+
+# 3x3 matrix
+red = np.array([[0, 255, 255],
+                [0, 255, 0],
+                [0, 255, 0]])
+
+green = np.array([[0, 255, 0],
+                  [0, 255, 0],
+                  [0, 255, 255]])
+
+blue = np.array([[255, 255, 0],
+                   [0, 255, 0],
+                   [0, 255, 0]])
+
+rgb_image =  cv2.merge((blue, green, red))  # <-- What do you think about the order? BGR
+#cv2.cvtColor(resized, cv2.COLOR_BGR2RGB)
+
+resized = cv2.resize(rgb_image, (300,300), interpolation= cv2.INTER_NEAREST)
+cv2.imwrite("filename.png", resized)
+#plt.imshow(rgb_image)
+```
+@LIA.eval(`["main.py"]`, `none`, `python3 main.py`)
+
+
+## Session 3 - Einführung in OpenCV
+
+> _OpenCV (Open Source Computer Vision Library) is a library of programming functions mainly for real-time computer vision. Originally developed by Intel, it was later supported by Willow Garage, then Itseez (which was later acquired by Intel). The library is cross-platform and licensed as free and open-source software under Apache License 2. Starting in 2011, OpenCV features GPU acceleration for real-time operations._ (Wikipedia)
+
 
 ```ascii
                     +----------------------+
@@ -166,37 +199,4 @@ The whole story is "slightly" more complex :-)
 ```
 ![Image processing example "Image processing used for extracting pedestrian track parameter"](./images/image_processing_example.png)
 
-### How does a computer represent an image?
 
-```python ColoredImage.py
-import numpy as np
-import cv2
-from matplotlib import pyplot as plt
-
-# 3x3 matrix
-red = np.array([[0, 255, 255],
-                [0, 255, 0],
-                [0, 255, 0]])
-
-green = np.array([[0, 255, 0],
-                  [0, 255, 0],
-                  [0, 255, 255]])
-
-blue = np.array([[255, 255, 0],
-                   [0, 255, 0],
-                   [0, 255, 0]])
-
-rgb_image =  cv2.merge((blue, green, red))  # <-- What do you think about the order? BGR
-#cv2.cvtColor(resized, cv2.COLOR_BGR2RGB)
-
-#plt.imshow(rgb_image)
-resized = cv2.resize(rgb_image, (300,300), interpolation= cv2.INTER_NEAREST)
-cv2.imwrite("filename.png", resized)
-```
-@LIA.eval(`["main.py"]`, `none`, `python3 main.py`)
-
-### Which tools we are using?
-
-> _OpenCV (Open Source Computer Vision Library) is a library of programming functions mainly for real-time computer vision. Originally developed by Intel, it was later supported by Willow Garage, then Itseez (which was later acquired by Intel). The library is cross-platform and licensed as free and open-source software under Apache License 2. Starting in 2011, OpenCV features GPU acceleration for real-time operations._ (Wikipedia)
-
-!?[](https://www.youtube.com/watch?v=oXlwWbU8l2o)
