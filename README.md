@@ -1,9 +1,9 @@
 <!--
-author:   André Dietrich
+author:   Sebastian Zug
 
 email:    LiaScript@web.de
 
-version:  0.0.2
+version:  0.0.3
 
 language: en
 
@@ -13,7 +13,7 @@ import: https://raw.githubusercontent.com/LiaScript/CodeRunner/master/README.md
 
 -->
 
-[![LiaScript](https://raw.githubusercontent.com/LiaScript/LiaScript/master/badges/course.svg)](https://liascript.github.io/course/?https://raw.githubusercontent.com/SebastianZug/PythonCourse_2023/main/README.md#1)
+[![LiaScript](https://raw.githubusercontent.com/LiaScript/LiaScript/master/badges/course.svg)](https://liascript.github.io/course/?https://raw.githubusercontent.com/SebastianZug/ImageProcessing_2023/main/README.md)
 
 # Python Einführung Bildverarbeitung - 30. November 2023
 
