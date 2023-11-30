@@ -85,8 +85,7 @@ my_list_B = [1, 2, 5, 4, 8, 6]
 
 # Compare lists
 # ??
-
-print(result)  
+print("Hier fehlt Ihre Lösung :-)")  
 ```
 @LIA.eval(`["main.py"]`, `none`, `python3 main.py`)
 
@@ -94,7 +93,7 @@ print(result)
 > 
 > ![ChatGPT example](./images/ChatGPT_Python_script.png)
 
-## Session 1 - Review, comparison of Jupyter notebooks and Python scripts 
+## Session 1 - Jupyter Notebooks vs. Python Scripts 
 
 > Was ist die generelle Idee des Codebeispiels oben?
 
@@ -128,9 +127,11 @@ https://www.kaggle.com/sebastianzug/part-1-notebooks
 
 ## Session 2 - Basics  
 
-> What does it mean "image processing"?
+> Was heißt das eigentlich "image processing"?
 
-_In computer science and electrical engineering, image processing is the processing of signals that represent images, for example photographs or frames from videos. The result of image processing can in turn be an image or a set of features of the input image._ (Wikipedia)
+_In der Informatik und Elektrotechnik ist die Bildverarbeitung die Verarbeitung von Signalen, die Bilder darstellen, z. B. Fotos oder Einzelbilder aus Videos. Das Ergebnis der Bildverarbeitung kann wiederum ein Bild oder ein Satz von Merkmalen des Eingangsbildes sein._ (Wikipedia)
+
+![Image processing example "Image processing used for extracting pedestrian track parameter"](./images/image_processing_example.png)
 
 Was ist eigentlich ein Bild aus Sicht des Computers?
 
@@ -162,9 +163,17 @@ cv2.imwrite("filename.png", resized)
 @LIA.eval(`["main.py"]`, `none`, `python3 main.py`)
 
 
+Ok, das ist jetzt doch sehr abstrakt. Können wir auch mal ein richtiges Bild sehen?
+
+https://imagecolorpicker.com/
+
+> An dieser Stelle schauen wir uns an, wie wir die Arrays in Python nutzen können, um Bilder zu manipulieren. Dazu nutzen wir die Bibliothek `numpy` und `matplotlib`. 
+
 ## Session 3 - Einführung in OpenCV
 
-> _OpenCV (Open Source Computer Vision Library) is a library of programming functions mainly for real-time computer vision. Originally developed by Intel, it was later supported by Willow Garage, then Itseez (which was later acquired by Intel). The library is cross-platform and licensed as free and open-source software under Apache License 2. Starting in 2011, OpenCV features GPU acceleration for real-time operations._ (Wikipedia)
+> Bislang haben wir alles "von Hand gemacht". Das ist natürlich nicht sehr effizient. Daher nutzen wir jetzt die Bibliothek `opencv` um die Bildverarbeitung zu beschleunigen. 
+
+> _OpenCV (Open Source Computer Vision Library) ist eine Bibliothek mit Programmierfunktionen hauptsächlich für die Echtzeit-Computersicht. Ursprünglich von Intel entwickelt, wurde sie später von Willow Garage und dann von Itseez (das später von Intel übernommen wurde) unterstützt. Die Bibliothek ist plattformübergreifend und wird als freie und quelloffene Software unter der Apache License 2 lizenziert. Seit 2011 bietet OpenCV GPU-Beschleunigung für Echtzeitoperationen._ (Wikipedia)
 
 
 ```ascii
@@ -197,6 +206,6 @@ cv2.imwrite("filename.png", resized)
     2D, 3D, Features, ...               Counts, Distances ...                                                   
 
 ```
-![Image processing example "Image processing used for extracting pedestrian track parameter"](./images/image_processing_example.png)
 
+Die Bildverarbeitung kann in mehrere Schritte unterteilt werden. Der erste Schritt ist die Bildvorverarbeitung. Dieser Schritt umfasst die Bildverbesserung, die Rauschunterdrückung, die Bildsegmentierung und die Bildskalierung. Der zweite Schritt ist die Merkmalsextraktion. Dieser Schritt umfasst die Merkmalsextraktion, die Merkmalsselektion und die Merkmalsklassifizierung. Der dritte Schritt ist die Objekterkennung. Dieser Schritt umfasst die Objekterkennung, die Objektverfolgung, die Objektverfolgung und die Objektklassifizierung. Final werden dann entsprechende Visualisierungen und Interpretationen durchgeführt.
 
